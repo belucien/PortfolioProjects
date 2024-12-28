@@ -1,8 +1,9 @@
--- Videogame Sales Cleaning
--- 1. Remove Duplicates
--- 2. Standardize the Data
--- 3. Remove Any Columns or Rows
--- 4. Null Values or blank values
+/*
+Video Game Sales Dataset Cleaning
+
+Skills used: Creating Tables, Windows Functions, Aggregate Functions, Converting Data Types, Creating / Removing Columns
+
+*/
 
 -- Initial Review of the Dataset
 
@@ -63,7 +64,7 @@ FROM vgsales1;
 
 -- 2. Standardize the Data
 
--- Converting decimal sales to respective market currency
+-- Converting decimal sales currency to respective market currency
 
 SELECT 
     *,
@@ -82,7 +83,7 @@ SELECT
 FROM 
     vgsales1;
     
--- Add New Columns with Dollars as Currency
+-- Add New Columns as respective currency types as well as the US Dollars exchange type
 
 ALTER TABLE vgsales1
 MODIFY COLUMN NA_Sales_Dollars VARCHAR(50),
@@ -127,7 +128,7 @@ ORDER BY Year ASC;
 
 -- 3. Remove Any Columns or Rows
 
--- Removing 2016 - 2020 Data from the dataset as shown in the Initial Review portion that this data was incomplete
+-- Removing 2016 - 2020 Data from the dataset as shown in the Initial Review portion that this data was incomplete (All Data matters in persepective, however in gaming sales this data did not capture all games released)
 
 DELETE FROM vgsales1
 WHERE Year BETWEEN 2016 AND 2020;
