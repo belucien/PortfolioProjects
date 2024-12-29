@@ -1,4 +1,11 @@
--- EDA Layoffs
+/*
+Layoffs Exploration 
+
+Skills used: CTE's, Substrings, Aggregate Functions
+
+*/
+
+-- Exploaratory Data Analysis Layoff Company Rankings
 
 -- Retrieve all columns and rows from the layoffs_staging2 table to examine the data.
 SELECT *
@@ -72,7 +79,7 @@ FROM layoffs_staging2
 GROUP BY company
 ORDER BY 2 DESC;
 
--- SAggregate total layoffs by company and year, ordering by total layoffs in descending order to analyze company-year combinations with the highest layoffs.
+-- Aggregate total layoffs by company and year, ordering by total layoffs in descending order to analyze company-year combinations with the highest layoffs.
 SELECT company, YEAR(`date`), SUM(total_laid_off)
 FROM layoffs_staging2
 GROUP BY company, YEAR(`date`)
