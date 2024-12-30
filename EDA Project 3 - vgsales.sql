@@ -1,5 +1,11 @@
--- Exploratory Data Analysis vgsales
+/*
+vgsales Exploration 
 
+Skills used: CTE's, Views, Aggregate Functions, CAST, REPLACE.
+
+[Since i converted most of the columns to varchar for presentation purposes I had to do conversion back to decimal]
+
+*/
 
 
 -- Retrieve all data from the vgsales1 table for an initial review.
@@ -192,4 +198,5 @@ GROUP BY Name, Platform
 ORDER BY SUM(CAST(REPLACE(REPLACE(Global_Sales_Dollars, '$', ''), ',', '') AS DECIMAL(15, 2))) DESC;
 
 -- I said between 1990-2008 Final Fantasy III/VI was the highest selling due to the SNES and my love for the game, oh how I was wrong.
+
 -- END
