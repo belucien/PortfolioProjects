@@ -1,5 +1,5 @@
 /*
-vgsales Exploration 
+vgsales Exploration
 
 Skills used: CTE's, Views, Aggregate Functions, CAST, REPLACE.
 
